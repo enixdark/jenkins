@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'npm start'
+                sh './jenkins/scripts/deploy-for-production.sh'
             }
         }
     }
