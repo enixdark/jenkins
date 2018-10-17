@@ -11,18 +11,14 @@ podTemplate(label: 'test', containers: [
     }
     container('node') {
       stage('Build') {
-          steps {
-              sh 'npm install'
-              sh 'npm install pm2 -g'
-          }
+          sh 'npm install'
+          sh 'npm install pm2 -g'
       }
     }
 
     container('pm2') {
       stage('Deploy') {
-          steps {
-              sh 'pm2 start index.js'
-          }
+          sh 'pm2 start index.js'
       }
     }
   
