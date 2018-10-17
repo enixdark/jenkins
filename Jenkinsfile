@@ -9,6 +9,9 @@ podTemplate(label: 'test', containers: [
     environment {
         CI = 'true'
     }
+
+    checkout scm
+    
     container('node') {
       stage('Build') {
           sh 'npm install'
